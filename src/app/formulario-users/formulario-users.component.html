@@ -1,0 +1,81 @@
+<div class="container">
+  <div style="margin-top: 2em;">
+    <h5 style="text-align: center;"> {{this.idSelected!=null ? 'Modificación de usuario' : 'Crear usuario'}}</h5>
+    <div class="d-flex justify-content-center">
+      <form style="flex-direction: column;" [formGroup]="formUser">
+        <div class="mb-3 mt-2 row" *ngIf="this.idSelected!=null">
+          <label for="inputTitle" class="col-sm-4 col-form-label">Id: </label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" style="color: red;"  placeholder="¡Este campo es de solo lectura!" id="inputName" disabled readonly>
+          </div>
+        </div>
+        <div class="mb-3 mt-2 row">
+          <label for="inputTitle" class="col-sm-4 col-form-label">Título: </label>
+          <div class="col-sm-8">
+            <select class="form-select" aria-label="Default select example" formControlName="titulo">
+              <option selected>---Select---</option>
+              <option value="mr">mr</option>
+              <option value="ms">ms</option>
+              <option value="mrs">mrs</option>
+              <option value="miss">miss</option>
+              <option value="dr">dr</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3 mt-2 row">
+          <label for="inputName" class="col-sm-4 col-form-label">Nombres: </label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputName" formControlName="nombres">
+          </div>
+        </div>
+        <div class="mb-3 mt-2 row">
+          <label for="inputLastName" class="col-sm-4 col-form-label">Apellidos: </label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputLastName" formControlName="apellidos">
+          </div>
+        </div>
+        <div class="mb-3 mt-2 row">
+          <label for="inputImg" class="col-sm-4 col-form-label">Imagen: </label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputImg" formControlName="imagen">
+          </div>
+        </div>
+        <div class="mb-3 mt-2 row">
+          <label for="inputGender" class="col-sm-4 col-form-label">Genero: </label>
+          <div class="col-sm-8">
+            <select class="form-select" aria-label="Default select example" formControlName="genero">
+              <option selected>---Select---</option>
+              <option value="male">male</option>
+              <option value="female">female</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3 mt-2 row">
+          <label for="inputEmail" class="col-sm-4 col-form-label">Correo electrónico: </label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputEmail" formControlName="correo">
+          </div>
+        </div>
+        <div class="mb-3 mt-2 row">
+          <label for="inputDob" class="col-sm-4 col-form-label">Fecha de nacimiento: </label>
+          <div class="col-sm-8">
+            <input type="date" class="form-control" id="inputDob" formControlName="fechaNacimiento">
+          </div>
+        </div>
+        <div class="mb-3 mt-2 row">
+          <label for="inputPhone" class="col-sm-4 col-form-label">Teléfono: </label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputPhone" formControlName="telefono">
+          </div>
+        </div>
+        <div class="mb-3 mt-2 row">
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-dark" style="margin-right: 15px;" (click)="guardar()">Guardar</button>
+            <button type="button" class="btn btn-dark" (click)="cancelar()">Cancelar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
